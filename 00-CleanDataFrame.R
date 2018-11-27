@@ -1,3 +1,9 @@
+#
+# Wrote by: Jose Luis Valerio, November 2018
+# rStudio not needed but recommended.
+#
+
+
 # Libraries needed
 # install.packages("anytime")
 
@@ -6,7 +12,7 @@ library("anytime")
 # Read the csv firle
 # This dataset has NaN values and should be cleaned up.
 
-# Set your working directory
+# Set your working directory or whatever your dir will be
 setwd("~/Desktop/bitcoin-historical-data")
 
 # This is about 3.603.136 rows
@@ -38,6 +44,7 @@ write.csv(MyData, file = "bitstampUSD_1-min_data_2012-01-01_to_2018-11-11-clean.
 # Split using R Core 
 # It could be easier to manipulate data by year
 # subset(MyData, format(as.Date(Timestamp),"%Y")==2005)
+# For a better research you can split it by year.
 
 MyData2011 <- with(MyData, MyData[(Timestamp >= "2011-01-01" & Timestamp < "2012-01-01"), ])
 MyData2012 <- with(MyData, MyData[(Timestamp >= "2012-01-01" & Timestamp < "2013-01-01"), ])
@@ -61,3 +68,6 @@ write.csv(MyData2016, file = "MyData2016.csv")
 write.csv(MyData2017, file = "MyData2017.csv")
 write.csv(MyData2018, file = "MyData2018.csv")
 
+#
+# Make your research from here, start plotting something.
+# 
